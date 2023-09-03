@@ -8,6 +8,13 @@ public class NormalizeAngle {
 
         int input = scanner.nextInt();
 
+        naive(input);
+        modulus(input);
+        System.out.println(Math.floorMod(input, 360));
+
+    }
+
+    static void naive(int input) {
         if (input >= 360) {
             while(input >= 360) {
                 input -= 360;
@@ -18,6 +25,15 @@ public class NormalizeAngle {
             while(input < 0) {
                 input += 360;
             }
+        }
+        System.out.println(input);
+    }
+
+    static void modulus(int input) {
+        if(input >= 360) {
+            input = input % 360;
+        } else if (input < 0) {
+            input = input % 360 + 360;
         }
         System.out.println(input);
     }
