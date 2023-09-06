@@ -7,25 +7,14 @@ public class Compass {
 
         String input = scanner.nextLine();
 
-        int[] arr = { 0, 0 };
+        int[] result = switch (input) {
+            case "N" -> new int[] { 0, 1 };
+            case "E" -> new int[] { 1, 0 };
+            case "S" -> new int[] { 0, -1 };
+            case "W" -> new int[] { -1, 0 };
+            default -> new int[] { 0, 0 };
+        };
+        System.out.println(Arrays.toString(result));
 
-        switch (input) {
-            case "N" -> {
-                arr[1] += 1;
-            }
-            case "E" -> {
-                arr[0] += 1;
-            }
-            case "S" -> {
-                arr[1] -= 1;
-            }
-            case "W" -> {
-                arr[0] -= 1;
-            }
-            default -> {
-                System.out.println("no good");
-            }
-        }
-        System.out.println(Arrays.toString(arr));
     }
 }
